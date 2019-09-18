@@ -7,7 +7,7 @@ function App() {
   const API_URL = 'http://localhost:8000'
 
   const getData = async () => {
-    fetch(`/api/data`)
+    fetch(`/data`)
     .then(response => response.json())
     .then(data => data.map(element => <Present read={element} />))
     .then(components => setDataRead(components))

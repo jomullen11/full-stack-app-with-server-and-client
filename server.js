@@ -15,6 +15,8 @@ app.use(express.urlencoded({ extended: true}))
 app.use(cors())
 app.use(express.static(path.join(__dirname, "client", "build")))
 
+const port = process.env.PORT || 8000
+
 // Defining the routes to use
 app.use('/data', routes.data)
 
@@ -23,6 +25,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 })
 
-app.listen(process.env.PORT, () => 
-    console.log(`App listening on port ${process.env.PORT}`)
+app.listen(port, () => 
+    console.log(`App listening on port ${port}`)
 )

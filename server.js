@@ -8,6 +8,8 @@ const express = require('express')
 const routes = require('./routes')
 const path = require('path')
 
+const port = process.env.PORT || 8000
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -15,10 +17,9 @@ app.use(express.urlencoded({ extended: true}))
 app.use(cors())
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-const port = process.env.PORT || 8000
 
 // Defining the routes to use
-app.use('/data', routes.data)
+app.use('/api', routes.data)
 
 // sends index.html back to the main file
 app.get('*', (req, res) => {

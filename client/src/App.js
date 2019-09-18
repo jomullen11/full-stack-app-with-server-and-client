@@ -9,7 +9,8 @@ function App() {
   const getData = async () => {
     fetch(`/api/data`)
     .then(response => response.json())
-    .then(data => data.map(element => <Present read={element} />))
+    // .then(data => data.map(element => <Present read={element} />))
+    .then(element => JSON.stringify(element))
     .then(components => setDataRead(components))
     .catch(err => console.log(err))
   }

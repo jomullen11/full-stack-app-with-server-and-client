@@ -5,9 +5,9 @@ const router = Router()
 
 // any extra routes
 router.get('/data', async (req, res) => {
-    // const result = await models.data.find({})
-    // res.status(200).send(result)
-    res.status(200).send(JSON.stringify({hello: "world"}))
+    const result = await models.data.find({})
+    res.status(200).send(result)
+    // res.status(200).send(JSON.stringify({hello: "world"}))
 })
 
 // get specific item by id

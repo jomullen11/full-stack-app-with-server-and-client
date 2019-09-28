@@ -12,7 +12,7 @@ const port = process.env.PORT || 8000
 
 const app = express()
 
-app.use(cors())ere
+app.use(cors())
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static(path.join(__dirname, "client", "build")))
